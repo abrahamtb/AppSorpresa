@@ -4,10 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feliz cumpleaños, Yhoshelyn 💜</title>
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
   <div class="hearts-container" id="heartsContainer"></div>
+  <audio id="bgMusic" src="audio/like-animal.mp3" loop preload="auto"></audio>
+
+  <button type="button" class="music-toggle" id="musicToggle" aria-label="Activar música" aria-pressed="false">
+    <span class="music-icon">♪</span>
+    <span id="musicText">Música</span>
+  </button>
 
   <section class="hero" id="hero">
     <div class="hero-glow"></div>
@@ -126,7 +132,7 @@
           </div>
 
           <div class="memory-card">
-            <img src="img/foto2.jpg" alt="Foto 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="img/fotoGrupo.jpg" alt="Foto 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="placeholder">Aquí va un recuerdo que te haga sonreír</div>
             <p>Mi preciosa ✨</p>
           </div>
@@ -222,13 +228,37 @@
 
           <p class="letter-line letter-signature">
             Con todo mi amor,<br>
-            Abraham 💚</p>
+            Abraham 💚
           </p>
         </div>
       </div>
     </section>
 
     <!-- SLIDE 5 -->
+    <section class="slide video-slide">
+      <div class="card video-card">
+        <p class="small-title">Un mensajito mío</p>
+        <h2>También quería decirte esto mirándote a los ojitos 🎥</h2>
+
+        <p>
+          Preparé este video para que sientas un poquito más cerquita mi voz,
+          mi cariño y todo lo que te quiero decir en tu cumpleaños.
+        </p>
+
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="img/foto1.jpg">
+            <source src="video/mensaje.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video.
+          </video>
+        </div>
+
+        <p class="video-note">
+          Coloca tu video como <strong>video/mensaje.mp4</strong> para que aparezca aquí.
+        </p>
+      </div>
+    </section>
+
+    <!-- SLIDE 6 -->
     <section class="slide final-slide">
       <div class="card final-card">
         <p class="small-title">Sorpresa final</p>
@@ -269,12 +299,13 @@
         <span class="progress-heart">♥</span>
         <span class="progress-heart">♥</span>
         <span class="progress-heart">♥</span>
+        <span class="progress-heart">♥</span>
       </div>
 
       <button type="button" class="nav-btn story-next" id="nextSlide">Abrir otro detalle ✨</button>
     </div>
   </main>
 
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

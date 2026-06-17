@@ -1,6 +1,9 @@
 const openGift = document.getElementById("openGift");
 const hero = document.getElementById("hero");
 const content = document.getElementById("content");
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+const musicText = document.getElementById("musicText");
 
 const heartsContainer = document.getElementById("heartsContainer");
 
@@ -36,9 +39,60 @@ const nextSlideLabels = [
   "Abrir otro detalle ✨",
   "Ver nuestros recuerdos 📸",
   "Leer la carta 💌",
+  "Ver mi mensajito 🎥",
   "Ir a la sorpresa final 🎂",
   ""
 ];
+
+if (bgMusic) {
+  bgMusic.volume = 0.42;
+}
+
+async function playMusic() {
+  if (!bgMusic) return;
+
+  try {
+    await bgMusic.play();
+    document.body.classList.add("music-playing");
+
+    if (musicToggle) {
+      musicToggle.setAttribute("aria-pressed", "true");
+    }
+
+    if (musicText) {
+      musicText.textContent = "Sonando";
+    }
+  } catch (error) {
+    if (musicText) {
+      musicText.textContent = "Agrega audio";
+    }
+  }
+}
+
+function pauseMusic() {
+  if (!bgMusic) return;
+
+  bgMusic.pause();
+  document.body.classList.remove("music-playing");
+
+  if (musicToggle) {
+    musicToggle.setAttribute("aria-pressed", "false");
+  }
+
+  if (musicText) {
+    musicText.textContent = "Música";
+  }
+}
+
+if (musicToggle) {
+  musicToggle.addEventListener("click", () => {
+    if (!bgMusic || bgMusic.paused) {
+      playMusic();
+    } else {
+      pauseMusic();
+    }
+  });
+}
 
 /* Abrir regalo */
 if (openGift) {
@@ -48,6 +102,7 @@ if (openGift) {
     document.body.classList.add("story-mode");
 
     showSlide(0);
+    playMusic();
     createConfetti();
   });
 }
