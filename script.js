@@ -1,49 +1,56 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const openGift = document.getElementById("openGift");
-  const hero = document.getElementById("hero");
-  const content = document.getElementById("content");
+const openGift = document.getElementById("openGift");
+const hero = document.getElementById("hero");
+const content = document.getElementById("content");
 
-  const heartsContainer = document.getElementById("heartsContainer");
+const heartsContainer = document.getElementById("heartsContainer");
 
-  const slides = document.querySelectorAll(".slide");
-  const prevSlide = document.getElementById("prevSlide");
-  const nextSlide = document.getElementById("nextSlide");
-  const slideCounter = document.getElementById("slideCounter");
+const slides = document.querySelectorAll(".slide");
+const prevSlide = document.getElementById("prevSlide");
+const nextSlide = document.getElementById("nextSlide");
+const slideCounter = document.getElementById("slideCounter");
+const progressHearts = document.querySelectorAll(".progress-heart");
 
-  const missionHearts = document.querySelectorAll(".mission-heart");
-  const heartMissionText = document.getElementById("heartMissionText");
+const missionHearts = document.querySelectorAll(".mission-heart");
+const heartMissionText = document.getElementById("heartMissionText");
 
-  const reasonCards = document.querySelectorAll(".reason-card");
+const reasonCards = document.querySelectorAll(".reason-card");
 
-  const memoryCards = document.querySelectorAll(".memory-card");
-  const prevMemory = document.getElementById("prevMemory");
-  const nextMemory = document.getElementById("nextMemory");
-  const memoryCounter = document.getElementById("memoryCounter");
+const memoryCards = document.querySelectorAll(".memory-card");
+const prevMemory = document.getElementById("prevMemory");
+const nextMemory = document.getElementById("nextMemory");
+const memoryCounter = document.getElementById("memoryCounter");
 
-  const openLetter = document.getElementById("openLetter");
-  const letterPaper = document.getElementById("letterPaper");
-  const letterLines = document.querySelectorAll(".letter-line");
+const openLetter = document.getElementById("openLetter");
+const letterPaper = document.getElementById("letterPaper");
+const letterLines = document.querySelectorAll(".letter-line");
 
-  const candleBtn = document.getElementById("candleBtn");
-  const finalMessage = document.getElementById("finalMessage");
+const candleBtn = document.getElementById("candleBtn");
+const finalMessage = document.getElementById("finalMessage");
 
-  let currentSlide = 0;
-  let memoryIndex = 0;
-  let touchedHearts = 0;
+let currentSlide = 0;
+let memoryIndex = 0;
+let touchedHearts = 0;
 
-  const completedSlides = new Set();
+const completedSlides = new Set();
+const nextSlideLabels = [
+  "Abrir otro detalle ✨",
+  "Ver nuestros recuerdos 📸",
+  "Leer la carta 💌",
+  "Ir a la sorpresa final 🎂",
+  ""
+];
 
-  /* Abrir regalo */
-  if (openGift) {
-    openGift.addEventListener("click", () => {
-      hero.style.display = "none";
-      content.classList.remove("hidden");
-      document.body.classList.add("story-mode");
+/* Abrir regalo */
+if (openGift) {
+  openGift.addEventListener("click", () => {
+    hero.style.display = "none";
+    content.classList.remove("hidden");
+    document.body.classList.add("story-mode");
 
-      showSlide(0);
-      createConfetti();
-    });
-  }
+    showSlide(0);
+    createConfetti();
+  });
+}
 
 /* Navegación principal */
 if (nextSlide) {
@@ -70,6 +77,8 @@ if (prevSlide) {
 }
 
 function showSlide(index, goingBack = false) {
+  currentSlide = index;
+
   slides.forEach((slide) => {
     slide.classList.remove("active");
     slide.classList.remove("back");
@@ -88,18 +97,19 @@ function showSlide(index, goingBack = false) {
     slideCounter.textContent = `${index + 1} / ${slides.length}`;
   }
 
+  progressHearts.forEach((heart, heartIndex) => {
+    heart.classList.toggle("active", heartIndex <= index);
+    heart.classList.toggle("current", heartIndex === index);
+  });
+
   if (prevSlide) {
     prevSlide.disabled = index === 0;
   }
 
   if (nextSlide) {
     nextSlide.disabled = index === slides.length - 1;
-
-    if (index === slides.length - 1) {
-      nextSlide.textContent = "Final 💜";
-    } else {
-      nextSlide.textContent = "Siguiente →";
-    }
+    nextSlide.style.display = index === slides.length - 1 ? "none" : "inline-flex";
+    nextSlide.textContent = nextSlideLabels[index] || "Abrir otro detalle ✨";
   }
 
   checkSlideLock();
@@ -127,19 +137,19 @@ function completeCurrentSlide() {
 
 /* Corazones interactivos */
 missionHearts.forEach((heart) => {
-  heart.addEventListener("click", () => {
+  const unlockHeart = () => {
     if (heart.classList.contains("active")) return;
 
     heart.classList.add("active");
     touchedHearts++;
 
     if (touchedHearts === 1) {
-      heartMissionText.textContent = "Primer corazón: porque eres muy especial para mí 💜";
+      heartMissionText.textContent = "Primer corazón: porque tu forma de ser me encanta 💗";
       createMiniConfetti();
     }
 
     if (touchedHearts === 2) {
-      heartMissionText.textContent = "Segundo corazón: porque incluso lejos, te pienso mucho 💕";
+      heartMissionText.textContent = "Segundo corazón: porque incluso lejos, te pienso muchísimo 💞";
       createMiniConfetti();
     }
 
@@ -148,6 +158,15 @@ missionHearts.forEach((heart) => {
       completeCurrentSlide();
       createConfetti();
     }
+  };
+
+  heart.addEventListener("pointerdown", (event) => {
+    event.preventDefault();
+    unlockHeart();
+  });
+
+  heart.addEventListener("click", () => {
+    unlockHeart();
   });
 });
 
@@ -233,7 +252,7 @@ if (candleBtn) {
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
-  heart.innerHTML = "💜";
+  heart.innerHTML = Math.random() > 0.5 ? "💗" : "💞";
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = Math.random() * 4 + 5 + "s";
@@ -250,7 +269,7 @@ setInterval(createHeart, 450);
 
 /* Confeti grande */
 function createConfetti() {
-  const colors = ["#ff7bda", "#b77cff", "#ffffff", "#ff4fc3", "#8b3dff"];
+  const colors = ["#ff6fae", "#ffd48a", "#fff4e8", "#7b4cff", "#ff9fc6"];
 
   for (let i = 0; i < 90; i++) {
     const confetti = document.createElement("div");
@@ -271,7 +290,7 @@ function createConfetti() {
 
 /* Confeti pequeño */
 function createMiniConfetti() {
-  const colors = ["#ff7bda", "#b77cff", "#ffffff", "#ff4fc3", "#8b3dff"];
+  const colors = ["#ff6fae", "#ffd48a", "#fff4e8", "#7b4cff", "#ff9fc6"];
 
   for (let i = 0; i < 25; i++) {
     const confetti = document.createElement("div");
@@ -305,4 +324,3 @@ function shakeButton(button) {
     }
   );
 }
-});
