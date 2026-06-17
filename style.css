@@ -139,6 +139,19 @@ body.music-playing .music-icon {
   justify-content: center;
   padding: 28px;
   text-align: center;
+  background:
+    linear-gradient(rgba(8, 4, 11, 0.42), rgba(8, 4, 11, 0.82)),
+    radial-gradient(circle at 50% 18%, rgba(255, 212, 138, 0.18), transparent 21rem),
+    linear-gradient(135deg, rgba(93, 63, 211, 0.22), rgba(43, 14, 27, 0.72)),
+    url("img/fotoGrupo.jpg") center / cover no-repeat;
+}
+
+.slideshow {
+  background:
+    linear-gradient(rgba(8, 4, 11, 0.78), rgba(8, 4, 11, 0.9)),
+    radial-gradient(circle at 50% 18%, rgba(255, 212, 138, 0.12), transparent 20rem),
+    linear-gradient(135deg, rgba(93, 63, 211, 0.18), rgba(8, 4, 11, 0.78)),
+    url("img/fotoGrupo.jpg") center / cover no-repeat;
 }
 
 .hero-glow {
@@ -598,8 +611,8 @@ h2 {
 
 .memory-box {
   position: relative;
-  width: min(560px, 100%);
-  height: 440px;
+  width: min(430px, 100%);
+  height: 600px;
   margin: 30px auto 20px;
   perspective: 900px;
 }
@@ -627,9 +640,15 @@ h2 {
 .memory-card img,
 .memory-card .placeholder {
   width: 100%;
-  height: 330px;
-  object-fit: cover;
+  height: 490px;
   border-radius: 18px;
+}
+
+.memory-card img {
+  object-fit: contain;
+  background:
+    linear-gradient(135deg, rgba(159, 122, 234, 0.16), rgba(255, 212, 138, 0.14)),
+    #2b0e1b;
 }
 
 .placeholder {
@@ -764,6 +783,86 @@ h2 {
   margin-top: 22px;
   color: var(--gold);
   font-size: 24px;
+}
+
+.closing-slide {
+  width: min(940px, calc(100% - 28px));
+  max-height: calc(100svh - 112px);
+}
+
+.closing-cover {
+  min-height: min(640px, calc(100svh - 128px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(30px, 7vw, 72px) 18px;
+  text-align: center;
+  text-shadow: 0 3px 30px rgba(0, 0, 0, 0.72);
+}
+
+.closing-slide::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(8, 4, 11, 0.28), rgba(8, 4, 11, 0.52)),
+    radial-gradient(circle at 50% 18%, rgba(255, 212, 138, 0.14), transparent 20rem),
+    url("img/fotoGrupo.jpg") center / cover no-repeat;
+}
+
+.closing-cover .small-title {
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 212, 138, 0.34);
+  border-radius: 999px;
+  background: rgba(8, 4, 11, 0.28);
+  backdrop-filter: blur(12px);
+}
+
+.closing-cover h2 {
+  max-width: 780px;
+  margin-top: 18px;
+  font-size: clamp(42px, 8vw, 86px);
+}
+
+.closing-cover p {
+  max-width: 620px;
+  color: rgba(255, 244, 232, 0.9);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.closing-love {
+  display: grid;
+  gap: 8px;
+  margin: 28px 0 18px;
+  padding: 20px 26px;
+  border: 1px solid rgba(255, 212, 138, 0.26);
+  border-radius: 26px;
+  background: rgba(8, 4, 11, 0.24);
+  backdrop-filter: blur(14px);
+}
+
+.closing-love span {
+  color: var(--gold);
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+.closing-love strong {
+  color: var(--blush);
+  font-size: clamp(36px, 7vw, 72px);
+  line-height: 1;
+}
+
+.closing-signature {
+  color: var(--gold);
+  font-style: italic;
 }
 
 .confetti {
@@ -919,12 +1018,13 @@ h2 {
   }
 
   .memory-box {
-    height: 340px;
+    width: min(330px, 100%);
+    height: 500px;
   }
 
   .memory-card img,
   .memory-card .placeholder {
-    height: 238px;
+    height: 398px;
   }
 
   .video-frame {
@@ -935,6 +1035,23 @@ h2 {
 
   .video-frame video {
     max-height: min(48svh, 430px);
+  }
+
+  .final-message {
+    padding: 22px 16px;
+  }
+
+  .closing-cover {
+    min-height: calc(100svh - 142px);
+    padding: 34px 12px 22px;
+  }
+
+  .closing-cover h2 {
+    font-size: 42px;
+  }
+
+  .closing-cover p {
+    font-size: 17px;
   }
 
   .memory-controls {
@@ -999,6 +1116,10 @@ h2 {
     font-size: 27px;
   }
 
+  .closing-cover h2 {
+    font-size: 36px;
+  }
+
   .date,
   .small-title {
     font-size: 12px;
@@ -1006,12 +1127,13 @@ h2 {
   }
 
   .memory-box {
-    height: 312px;
+    width: min(310px, 100%);
+    height: 468px;
   }
 
   .memory-card img,
   .memory-card .placeholder {
-    height: 210px;
+    height: 366px;
   }
 
   .video-frame {
@@ -1060,13 +1182,14 @@ h2 {
   }
 
   .memory-box {
-    height: 288px;
+    width: min(270px, 100%);
+    height: 390px;
     margin: 16px auto 12px;
   }
 
   .memory-card img,
   .memory-card .placeholder {
-    height: 188px;
+    height: 296px;
   }
 
   .video-frame {

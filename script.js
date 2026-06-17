@@ -41,6 +41,7 @@ const nextSlideLabels = [
   "Leer la carta 💌",
   "Ver mi mensajito 🎥",
   "Ir a la sorpresa final 🎂",
+  "Cerrar con amor 💜",
   ""
 ];
 
