@@ -1,8 +1,8 @@
 :root {
   --night: #08040b;
   --wine: #37111f;
-  --rose: #ff6fae;
-  --blush: #ffd2df;
+  --rose: #9f7aea;
+  --blush: #e8d8ff;
   --cream: #fff4e8;
   --gold: #ffd48a;
   --violet: #7b4cff;
@@ -49,8 +49,8 @@ button {
 
 .heart {
   position: absolute;
-  color: rgba(255, 179, 210, 0.72);
-  text-shadow: 0 0 18px rgba(255, 111, 174, 0.45);
+  color: rgba(199, 166, 255, 0.8);
+  text-shadow: 0 0 18px rgba(159, 122, 234, 0.55);
   animation: floatHeart 8s linear infinite;
 }
 
@@ -79,7 +79,7 @@ button {
   background:
     linear-gradient(rgba(8, 4, 11, 0.55), rgba(8, 4, 11, 0.78)),
     radial-gradient(circle at 50% 18%, rgba(255, 212, 138, 0.2), transparent 21rem),
-    radial-gradient(circle at 20% 82%, rgba(255, 111, 174, 0.22), transparent 18rem),
+    radial-gradient(circle at 20% 82%, rgba(159, 122, 234, 0.24), transparent 18rem),
     radial-gradient(circle at 80% 70%, rgba(123, 76, 255, 0.22), transparent 19rem),
     linear-gradient(145deg, #09040c 0%, #2b0e1b 46%, #120819 100%);
 }
@@ -112,8 +112,8 @@ button {
   border: 1px solid rgba(255, 212, 138, 0.16);
   border-radius: 50%;
   box-shadow:
-    inset 0 0 90px rgba(255, 111, 174, 0.13),
-    0 0 120px rgba(255, 111, 174, 0.16);
+    inset 0 0 90px rgba(159, 122, 234, 0.15),
+    0 0 120px rgba(159, 122, 234, 0.2);
   animation: slowBreath 6s ease-in-out infinite;
 }
 
@@ -203,7 +203,7 @@ h1 span {
   margin-top: 8px;
   color: var(--blush);
   text-shadow:
-    0 0 22px rgba(255, 111, 174, 0.44),
+    0 0 22px rgba(159, 122, 234, 0.5),
     0 0 55px rgba(255, 212, 138, 0.16);
 }
 
@@ -236,8 +236,8 @@ h2 {
   cursor: pointer;
   color: #2b0e1b;
   font-weight: 800;
-  background: linear-gradient(135deg, #fff1dc, #ff9fc6 52%, #ffd48a);
-  box-shadow: 0 16px 42px rgba(255, 111, 174, 0.28);
+  background: linear-gradient(135deg, #fff1dc, #c7a6ff 52%, #ffd48a);
+  box-shadow: 0 16px 42px rgba(159, 122, 234, 0.3);
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
@@ -255,7 +255,7 @@ h2 {
 .envelope-btn:hover,
 .cake-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 22px 54px rgba(255, 111, 174, 0.42);
+  box-shadow: 0 22px 54px rgba(159, 122, 234, 0.46);
 }
 
 .nav-btn {
@@ -367,7 +367,7 @@ h2 {
   border: 1px solid rgba(255, 244, 232, 0.18);
   border-radius: 24px;
   background:
-    linear-gradient(135deg, rgba(255, 244, 232, 0.13), rgba(255, 111, 174, 0.08)),
+    linear-gradient(135deg, rgba(255, 244, 232, 0.13), rgba(159, 122, 234, 0.12)),
     rgba(8, 4, 11, 0.76);
   backdrop-filter: blur(16px);
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.35);
@@ -390,7 +390,7 @@ h2 {
   font-size: 30px;
   line-height: 1;
   background:
-    linear-gradient(135deg, rgba(255, 244, 232, 0.18), rgba(255, 111, 174, 0.12)),
+    linear-gradient(135deg, rgba(255, 244, 232, 0.18), rgba(159, 122, 234, 0.16)),
     rgba(255, 244, 232, 0.08);
 }
 
@@ -413,7 +413,7 @@ h2 {
 
 .progress-heart.active {
   color: var(--blush);
-  text-shadow: 0 0 16px rgba(255, 111, 174, 0.42);
+  text-shadow: 0 0 16px rgba(159, 122, 234, 0.52);
 }
 
 .progress-heart.current {
@@ -454,10 +454,10 @@ h2 {
   color: #fff;
   font-size: 36px;
   background:
-    radial-gradient(circle at 35% 30%, #fff1dc, #ff6fae 46%, #7b4cff 100%);
+    radial-gradient(circle at 35% 30%, #fff1dc, #9f7aea 46%, #5d3fd3 100%);
   box-shadow:
-    0 0 0 8px rgba(255, 111, 174, 0.08),
-    0 18px 42px rgba(255, 111, 174, 0.34);
+    0 0 0 8px rgba(159, 122, 234, 0.12),
+    0 18px 42px rgba(159, 122, 234, 0.38);
   transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
 }
 
@@ -531,7 +531,7 @@ h2 {
 .reason-front {
   font-size: 44px;
   background:
-    linear-gradient(135deg, rgba(255, 111, 174, 0.28), rgba(255, 212, 138, 0.16)),
+    linear-gradient(135deg, rgba(159, 122, 234, 0.28), rgba(255, 212, 138, 0.16)),
     rgba(255, 244, 232, 0.08);
 }
 
@@ -541,7 +541,7 @@ h2 {
   font-family: "Trebuchet MS", Verdana, sans-serif;
   font-weight: 800;
   line-height: 1.55;
-  background: rgba(255, 111, 174, 0.16);
+  background: rgba(159, 122, 234, 0.18);
 }
 
 .love-note,
@@ -551,7 +551,7 @@ h2 {
   border: 1px solid rgba(255, 212, 138, 0.22);
   border-radius: 24px;
   background:
-    linear-gradient(135deg, rgba(255, 212, 138, 0.13), rgba(255, 111, 174, 0.09)),
+    linear-gradient(135deg, rgba(255, 212, 138, 0.13), rgba(159, 122, 234, 0.12)),
     rgba(255, 244, 232, 0.06);
 }
 
@@ -640,7 +640,7 @@ h2 {
 }
 
 .letter-card::before {
-  content: "💗";
+  content: "💜";
   position: absolute;
   right: 30px;
   top: 22px;
@@ -655,7 +655,7 @@ h2 {
   border-radius: 24px;
   text-align: left;
   background:
-    linear-gradient(135deg, rgba(255, 244, 232, 0.18), rgba(255, 111, 174, 0.1)),
+    linear-gradient(135deg, rgba(255, 244, 232, 0.18), rgba(159, 122, 234, 0.13)),
     rgba(255, 244, 232, 0.08);
 }
 
@@ -671,6 +671,12 @@ h2 {
 .letter-line.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.letter-signature {
+  color: var(--gold);
+  font-style: italic;
+  text-align: right;
 }
 
 .cake-btn {

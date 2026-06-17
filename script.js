@@ -144,17 +144,17 @@ missionHearts.forEach((heart) => {
     touchedHearts++;
 
     if (touchedHearts === 1) {
-      heartMissionText.textContent = "Primer corazón: porque tu forma de ser me encanta 💗";
+      heartMissionText.textContent = "porque tu forma de ser me encanta 💜";
       createMiniConfetti();
     }
 
     if (touchedHearts === 2) {
-      heartMissionText.textContent = "Segundo corazón: porque incluso lejos, te pienso muchísimo 💞";
+      heartMissionText.textContent = "porque incluso lejos, te pienso muchísimo 💜";
       createMiniConfetti();
     }
 
     if (touchedHearts === 3) {
-      heartMissionText.textContent = "Tercer corazón: sorpresa desbloqueada, mi amor ✨";
+      heartMissionText.textContent = "porque eres increíblemente especial para mí ✨";
       completeCurrentSlide();
       createConfetti();
     }
@@ -229,7 +229,7 @@ if (openLetter) {
     letterLines.forEach((line, index) => {
       setTimeout(() => {
         line.classList.add("visible");
-      }, index * 700);
+      }, index * 420);
     });
 
     completeCurrentSlide();
@@ -252,7 +252,7 @@ if (candleBtn) {
 function createHeart() {
   const heart = document.createElement("div");
   heart.classList.add("heart");
-  heart.innerHTML = Math.random() > 0.5 ? "💗" : "💞";
+  heart.innerHTML = "💜";
 
   heart.style.left = Math.random() * 100 + "vw";
   heart.style.animationDuration = Math.random() * 4 + 5 + "s";
@@ -269,7 +269,7 @@ setInterval(createHeart, 450);
 
 /* Confeti grande */
 function createConfetti() {
-  const colors = ["#ff6fae", "#ffd48a", "#fff4e8", "#7b4cff", "#ff9fc6"];
+  const colors = ["#9f7aea", "#c7a6ff", "#fff4e8", "#7b4cff", "#ffd48a"];
 
   for (let i = 0; i < 90; i++) {
     const confetti = document.createElement("div");
@@ -290,7 +290,7 @@ function createConfetti() {
 
 /* Confeti pequeño */
 function createMiniConfetti() {
-  const colors = ["#ff6fae", "#ffd48a", "#fff4e8", "#7b4cff", "#ff9fc6"];
+  const colors = ["#9f7aea", "#c7a6ff", "#fff4e8", "#7b4cff", "#ffd48a"];
 
   for (let i = 0; i < 25; i++) {
     const confetti = document.createElement("div");
