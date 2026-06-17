@@ -304,4 +304,5 @@ function shakeButton(button) {
       iterations: 1
     }
   );
+}
 });
