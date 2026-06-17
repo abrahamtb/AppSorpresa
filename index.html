@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz cumpleaños, Yhoshelyn 💜</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="hearts-container" id="heartsContainer"></div>
+
+  <section class="hero" id="hero">
+    <div class="stars"></div>
+
+    <div class="hero-content">
+      <p class="date">18 de junio</p>
+
+      <h1>
+        Feliz cumpleaños,  
+        <span>Yhoshelyn</span>
+      </h1>
+
+      <p class="hero-text">
+        Hoy no puedo estar contigo en persona, pero quise hacerte algo especial,
+        algo hecho con amor, paciencia y con todo mi corazón.
+      </p>
+
+      <button class="main-btn" id="openGift">
+        Abrir mi regalo 🎁
+      </button>
+    </div>
+  </section>
+  <main class="hidden slideshow" id="content">
+
+  <!-- SLIDE 1 -->
+  <section class="slide active" data-lock="true">
+    <div class="card interactive-card">
+      <p class="small-title">18 de junio</p>
+      <h2>Mi preciosa Yhoshelyn 💜</h2>
+
+      <p>
+        Antes de empezar este pequeño regalo, quiero que hagas algo bonito:
+      </p>
+
+      <h3 class="mission-title">Toca los 3 corazones para abrir la sorpresa</h3>
+
+      <div class="heart-mission">
+        <button type="button" class="mission-heart">💜</button>
+        <button type="button" class="mission-heart">💕</button>
+        <button type="button" class="mission-heart">💜</button>
+      </div>
+
+      <p class="mission-text" id="heartMissionText">
+        Cada corazón guarda un pedacito de lo que siento por ti.
+      </p>
+    </div>
+  </section>
+
+  <!-- SLIDE 2: sección 2 + 3 unidas -->
+  <section class="slide" data-lock="true">
+    <div class="card interactive-card">
+      <p class="small-title">Para mi Yhoshy</p>
+      <h2>Mi cabezona linda, preciosa y cariño 💕</h2>
+
+      <p>
+        Esta parte es solo para recordarte lo especial que eres para mí.
+        Toca una tarjetita para descubrir un mensaje.
+      </p>
+
+      <div class="nicknames">
+        <span>Yhoshy 💜</span>
+        <span>Cabezona linda 😚</span>
+        <span>Preciosa ✨</span>
+        <span>Cariño 💕</span>
+      </div>
+
+      <div class="reason-grid">
+        <div class="reason-card">
+          <div class="reason-front">💜</div>
+          <div class="reason-back">
+            Me gusta pensarte incluso cuando estamos lejos.
+          </div>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-front">🌙</div>
+          <div class="reason-back">
+            Eres esa personita que puede cambiarme el día con solo existir.
+          </div>
+        </div>
+
+        <div class="reason-card">
+          <div class="reason-front">✨</div>
+          <div class="reason-back">
+            Quiero que hoy sonrías mucho, porque este día es tuyo.
+          </div>
+        </div>
+      </div>
+
+      <div class="bts-box">
+        <p>
+          💜 Una vibra morada, rosada y bonita, con un poquito de estilo BTS,
+          porque esta página fue hecha solo para ti 💜
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 3: galería interactiva -->
+  <section class="slide">
+    <div class="card gallery-slide">
+      <p class="small-title">Nuestros recuerdos</p>
+      <h2>Fotitos que quiero guardar contigo 📸</h2>
+
+      <p>
+        Presiona los botones para pasar cada recuerdo.
+      </p>
+
+      <div class="memory-box">
+
+        <div class="memory-card active">
+          <img src="img/foto1.jpg" alt="Foto 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Coloca aquí foto1.jpg</div>
+          <p>Mi yhoshy bonita 💜</p>
+        </div>
+
+        <div class="memory-card">
+          <img src="img/foto2.jpg" alt="Foto 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Coloca aquí foto2.jpg</div>
+          <p>Mi preciosa ✨</p>
+        </div>
+
+        <div class="memory-card">
+          <img src="img/foto3.jpg" alt="Foto 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Coloca aquí foto3.jpg</div>
+          <p>Mi cabezona favorita 😚</p>
+        </div>
+
+        <div class="memory-card">
+          <img src="img/foto4.jpg" alt="Foto 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Coloca aquí foto4.jpg</div>
+          <p>La personita que alegra mis días 💕</p>
+        </div>
+
+        <div class="memory-card">
+          <img src="img/foto5.jpg" alt="Foto 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Coloca aquí foto5.jpg</div>
+          <p>Aunque lejos, siempre en mi corazón 🌙</p>
+        </div>
+
+        <div class="memory-card">
+          <img src="img/foto6.jpg" alt="Foto 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder">Coloca aquí foto6.jpg</div>
+          <p>Un recuerdo más para nosotros 💜</p>
+        </div>
+
+      </div>
+
+      <div class="memory-controls">
+        <button class="nav-btn" id="prevMemory">← Foto anterior</button>
+        <span id="memoryCounter">1 / 6</span>
+        <button class="nav-btn" id="nextMemory">Siguiente foto →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 4: mensaje + carta unidos -->
+  <section class="slide" data-lock="true">
+    <div class="card letter-card interactive-card">
+      <p class="small-title">Una carta para ti</p>
+      <h2>Abre este sobre, mi amor 💌</h2>
+
+      <p>
+        Hay palabras que no siempre sé decir de frente, pero hoy quiero dejarlas
+        aquí para ti.
+      </p>
+
+      <button class="envelope-btn" id="openLetter">
+        💌 Abrir carta
+      </button>
+
+      <div class="letter-paper hidden" id="letterPaper">
+        <p class="letter-line">
+          Mi amor, feliz cumpleaños.
+        </p>
+
+        <p class="letter-line">
+          Aunque hoy estemos a distancia, quería que sientas que estoy contigo de alguna forma.
+        </p>
+
+        <p class="letter-line">
+          No pude darte un regalo grande, pero hice esto pensando en ti, en tu sonrisa y en lo mucho que significas para mí.
+        </p>
+
+        <p class="letter-line">
+          Eres una persona muy especial en mi vida, mi Yhoshy, mi cabezona, mi preciosa.
+        </p>
+
+        <p class="letter-line">
+          Espero que este detalle te saque una sonrisa y te recuerde que te quiero muchísimo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 FINAL -->
+  <section class="slide final-slide">
+    <div class="card final-card">
+      <p class="small-title">Sorpresa final</p>
+      <h2>Feliz cumpleaños, mi vida 🎂💜</h2>
+
+      <p>
+        Ahora toca la velita para abrir tu último regalo.
+      </p>
+
+      <button class="cake-btn" id="candleBtn">
+        🎂 Tocar la velita
+      </button>
+
+      <div class="final-message hidden" id="finalMessage">
+        <h2>Te quiero muchísimo, Yhoshelyn 💜</h2>
+
+        <p>
+          Tal vez no puedo abrazarte hoy como quisiera, pero desde donde estoy
+          te mando todo mi cariño.
+        </p>
+
+        <p>
+          Esta página es pequeña, pero está hecha con amor, con ilusión y con
+          muchas ganas de hacerte sentir especial en tu cumpleaños.
+        </p>
+
+        <h3>Con mucho cariño, Abraham 🌙</h3>
+      </div>
+    </div>
+  </section>
+
+  <div class="slide-controls">
+    <button class="nav-btn" id="prevSlide">← Atrás</button>
+    <span id="slideCounter">1 / 5</span>
+    <button class="nav-btn" id="nextSlide">Siguiente →</button>
+  </div>
+
+</main>
+
+  <script src="script.js"></script>
+</body>
+</html>
