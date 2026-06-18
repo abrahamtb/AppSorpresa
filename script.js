@@ -95,9 +95,23 @@ if (musicToggle) {
   });
 }
 
+async function openFullscreen() {
+  const page = document.documentElement;
+
+  if (!page.requestFullscreen) return;
+
+  try {
+    await page.requestFullscreen();
+  } catch (error) {
+    // Algunos navegadores móviles no permiten pantalla completa en páginas normales.
+  }
+}
+
 /* Abrir regalo */
 if (openGift) {
   openGift.addEventListener("click", () => {
+    openFullscreen();
+
     hero.style.display = "none";
     content.classList.remove("hidden");
     document.body.classList.add("story-mode");
