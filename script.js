@@ -200,17 +200,17 @@ missionHearts.forEach((heart) => {
     touchedHearts++;
 
     if (touchedHearts === 1) {
-      heartMissionText.textContent = "porque tu forma de ser me encanta 💜";
+      heartMissionText.textContent = "tu forma de ser me encanta 💜";
       createMiniConfetti();
     }
 
     if (touchedHearts === 2) {
-      heartMissionText.textContent = "porque incluso lejos, te pienso muchísimo 💜";
+      heartMissionText.textContent = "incluso lejos, te pienso muchísimo 💜";
       createMiniConfetti();
     }
 
     if (touchedHearts === 3) {
-      heartMissionText.textContent = "porque eres increíblemente especial para mí ✨";
+      heartMissionText.textContent = "eres increíblemente especial para mí ✨";
       completeCurrentSlide();
       createConfetti();
     }
